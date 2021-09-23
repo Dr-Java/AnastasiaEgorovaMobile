@@ -36,10 +36,10 @@ public class NativeMobileTests extends BaseTest {
 
         getIPageObject().getElement(LOGIN_FIELD)
                   .sendKeys(EMAIL);
-        //Input account password
+
         getIPageObject().getElement(PASSWORD_FIELD)
                   .sendKeys(PASSWORD);
-        //Perform login
+
         getIPageObject().getElement(SIGN_IN_BUTTON).click();
 
 
