@@ -38,7 +38,7 @@ public class PageObject implements IPageObject {
 
     @Override
     public List<WebElement> getElements(String elements) throws NoSuchFieldException, IllegalAccessException {
-        Field field = this.getClass().getDeclaredField(elements);
+        Field field = somePageObject.getClass().getDeclaredField(elements);
         field.setAccessible(true);
         return (List<WebElement>) field.get(somePageObject);
     }
