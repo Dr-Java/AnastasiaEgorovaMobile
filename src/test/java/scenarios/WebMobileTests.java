@@ -15,6 +15,8 @@ public class WebMobileTests extends BaseTest {
 
     @Test(groups = {"web"})
     public void testSuccessfulGoogleSearch() throws InterruptedException {
+
+        //Open Google search page
         getDriver().get(GOOGLE_URL);
 
         new WebDriverWait(getDriver(), 100)
@@ -22,20 +24,27 @@ public class WebMobileTests extends BaseTest {
                 .executeScript(READY_STATE)
                 .equals(COMPLETE));
 
-
+        //Check page title is correct
         assertEquals( getDriver().getTitle(), PAGE_TITLE,
             "Incorrect page title");
 
         WebPageObject webPageObject = new WebPageObject(getDriver());
 
+        //Make a search using keyword 'EPAM'
         WebElement searchField = webPageObject.getSearchField();
         searchField.click();
         searchField.sendKeys(QUERY);
 
+        //Make sure there are some relevant suggestions
         List<WebElement> searchSuggestionsList = webPageObject.getSearchSuggestionsList();
+        assertTrue(searchSuggestionsList.size() > 0,
+            "List of suggestions is empty");
+
+        //Click on first suggestion
         searchSuggestionsList.get(0).click();
         new WebDriverWait(getDriver(), 10);
 
+        //Make sure there are some relevant results
         List<WebElement> searchResults = webPageObject.getSearchResults();
         assertTrue(searchResults.size() > 0,
             "List of results is empty");
