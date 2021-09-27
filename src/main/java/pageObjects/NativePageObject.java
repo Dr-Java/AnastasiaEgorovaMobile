@@ -46,7 +46,6 @@ public class NativePageObject extends PageObject {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='BudgetActivity']")
     WebElement activity;
 
-
     public NativePageObject(AppiumDriver appiumDriver) {
         PageFactory.initElements( new AppiumFieldDecorator(appiumDriver), this);
     }

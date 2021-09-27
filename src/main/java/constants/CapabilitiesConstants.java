@@ -7,4 +7,6 @@ public class CapabilitiesConstants {
     public static final String DEVICE_NAME = "deviceName";
     public static final String APP = "app";
     public static final String BROWSER_NAME = "browserName";
+    public static final String IGNORE_DRIVER_VERSION = "chromedriverDisableBuildCheck";
+    public static final String TRUE = "true";
 }

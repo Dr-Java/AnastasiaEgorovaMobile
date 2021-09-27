@@ -6,14 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-
 public class WebPageObject extends PageObject {
 
     @FindBy(xpath = "//input[@name='q']")
     WebElement searchField;
-
-    @FindBy(xpath = "//li[@class='sbct']")
-    List<WebElement> searchSuggestionsList;
 
     @FindBy(xpath = "//div[@id='rso']/div")
     List<WebElement> searchResults;
@@ -28,10 +24,6 @@ public class WebPageObject extends PageObject {
 
     public List<WebElement> getSearchResults() {
         return searchResults;
-    }
-
-    public List<WebElement> getSearchSuggestionsList() {
-        return searchSuggestionsList;
     }
 }
 

@@ -63,5 +63,4 @@ public class BaseTest implements IDriver {
     private void setPageObject(String appType, AppiumDriver appiumDriver) throws Exception {
         iPageObject = new PageObject(appType, appiumDriver);
     }
-
 }

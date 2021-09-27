@@ -1,7 +1,5 @@
 package pageObjects;
 
-import static constants.AppConstants.*;
-
 import io.appium.java_client.AppiumDriver;
 import java.lang.reflect.Field;
 import java.util.List;
@@ -16,10 +14,10 @@ public class PageObject implements IPageObject {
 
         System.out.println("Current app type: "+appType);
         switch(appType){
-            case WEB_TYPE:
+            case "web":
                 somePageObject = new WebPageObject(appiumDriver);
                 break;
-            case NATIVE_TYPE:
+            case "native":
                 somePageObject = new NativePageObject(appiumDriver);
                 break;
             default: throw new Exception("Can't create a page object for " + appType);
