@@ -9,8 +9,8 @@
   <version>1.0-SNAPSHOT</version>
 
   <properties>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
 
     <suite.file></suite.file>
   </properties>
@@ -21,10 +21,18 @@
       <artifactId>java-client</artifactId>
       <version>7.3.0</version>
     </dependency>
+
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
       <version>7.1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>3.4.1</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
@@ -74,6 +82,46 @@
         <suite.file>./src/test/resources/webTNG.xml</suite.file>
       </properties>
     </profile>
-  </profiles>
+
+  <profile>
+    <id>cloudWebAndroid</id>
+    <activation>
+      <activeByDefault>false</activeByDefault>
+    </activation>
+    <properties>
+      <suite.file>./src/test/resources/cloudWebAndroidTNG.xml</suite.file>
+    </properties>
+  </profile>
+
+  <profile>
+    <id>CloudWebIOS</id>
+    <activation>
+      <activeByDefault>false</activeByDefault>
+    </activation>
+    <properties>
+      <suite.file>./src/test/resources/cloudWebIOS_TNG.xml</suite.file>
+    </properties>
+  </profile>
+
+  <profile>
+    <id>CloudNativeAndroid</id>
+    <activation>
+      <activeByDefault>false</activeByDefault>
+    </activation>
+    <properties>
+      <suite.file>./src/test/resources/cloudNativeAndroidTNG.xml</suite.file>
+    </properties>
+  </profile>
+
+  <profile>
+    <id>CloudNativeIOS</id>
+    <activation>
+      <activeByDefault>false</activeByDefault>
+    </activation>
+    <properties>
+      <suite.file>./src/test/resources/cloudNativeIOS_TNG.xml</suite.file>
+    </properties>
+  </profile>
+</profiles>
 
 </project>
